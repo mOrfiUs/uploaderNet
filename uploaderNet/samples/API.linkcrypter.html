@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>DOCUMENTACIÓN DE LA API - MegaCrypter</title>
+</head>
+<body id="api_doc">
+<h1>¡Es hora de programar, yaba daba doo!</h1>
+<p>¿Estás programando un gestor de descargas? Buenas noticias, MegaCrypter dispone de una API pública ;)</p>
+<p>(<strong>Por ahora</strong> sin API-KEY)</p>
+<h2>Vamos a ver cómo funciona...</h2>
+Megacrypter API (version <strong>0.7</strong>) utiliza <a href="//en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> con <a href="//en.wikipedia.org/wiki/POST_%28HTTP%29" target="_blank">peticiones HTTP POST</a>.
+<pre class="code">
+<div class="api_method"><strong>API URL -> </strong><em>https://linkcrypter.net/api</em>
+(<strong>Content-Type:</strong> <em>application/json</em>)</div>
+
+<div class="api_method"><strong>Petición crypt </strong>(para proteger una lista de enlaces de MEGA):
+{"m": "crypt", 
+"links": [<em>"MEGA_LINK_1"</em>, <em>"MEGA_LINK_2"</em> ... <em>"MEGA_LINK_N"</em>],
+*"expire": <em>0-6</em>
+*"tiny_url": <em>true OR false</em>,
+*"app_finfo": <em>true OR false</em>,
+*"hide_name": <em>true OR false</em>,
+*"pass": <em>"PASS"</em>,
+*"referer": <em>"DOMAIN_NAME"</em>,
+*"extra_info": <em>"EXTRA_INFO"</em>,
+*"email": <em>"EMAIL"</em>}
+
+<div class="extra_info"><strong>*Parámetros opcionales:</strong>
+<em>1) Valores de caducidad: 0 -> nunca (por defecto), 1 -> 10 minutos, 2 -> 1 hora...</em>
+<em>2) La opción de urls cortas está desactivada por defecto.</em>
+<em>3) La opción de añadir la información del archivo está desactivada por defecto.</em>
+<em>4) La opción de enmascarar los nombres de fichero está desactivada por defecto.</em>
+<em>5) Las contraseñas son sensibles a minúsculas/mayúsculas.</em>
+<em>6) No es necesario que el referer incluya 'http://'. Está limitado a 64 caracteres</em>
+<em>7) La información extra está limitada a 64 caracteres.</em>
+<em>Nota: la lista de enlaces está limitada a 250</em></div>
+<strong>Respuesta crypt:</strong>
+{"links": [<em>"MC_LINK_1"</em>, <em>"MC_LINK_2"</em> ... <em>"MC_LINK_N"</em>]}
+</div>
+
+<div class="api_method"><strong>Petición info</strong> (para obtener diversa información sobre un enlace):
+{"m": "info", 
+"link": <em>"MC_LINK"</em>}
+
+<strong>Respuesta info:</strong>
+{"name": <em>"FILE_NAME" OR "CRYPTED_FILE_NAME"</em>, 
+"size": <em>FILE_SIZE</em>, 
+"key": <em>"FILE_KEY" OR "CRYPTED_FILE_KEY"</em>,
+"extra": <em>"EXTRA_INFO" OR "CRYPTED_EXTRA_INFO"</em>,
+"expire": <em>false OR EXPIRE_TIMESTAMP</em>,
+"pass": <em>false OR "ITER_LOG2#KEY_CHECK_HASH#SALT"</em>}
+
+<div class="extra_info"><strong>En relación a los enlaces protegidos con contraseña</strong>: 
+
+File name, file key, and extra-info will be returned crypted using AES CBC (PKCS7) with 256 bits key derivated from pass
+and zero-iv. Moreover, SHA-256 key hash will be returned to allow you checking it.
+
+Sigue este <strong>algoritmo</strong> para descifrar los campos cifrados:
+
+<em>REPEAT
+        
+    password := read_password()
+    
+    info_key := hmac := hmac_sha256(password, base64_dec(SALT))
+    
+    FOR i=2 : 1 : pow(2, ITER_LOG2)
+        
+        hmac := hmac_sha256(password, hmac)
+    
+        info_key := info_key XOR hmac
+    
+    END
+
+UNTIL sha256(info_key) = base64_dec(KEY_CHECK_HASH)
+
+
+file_name := aes_cbc_dec(base64_dec(CRYPTED_FILE_NAME), info_key, IV(0))
+
+file_key := aes_cbc_dec(base64_dec(CRYPTED_FILE_KEY), info_key, IV(0))
+
+extra_info := aes_cbc_dec(base64_dec(CRYPTED_EXTRA_INFO), info_key, IV(0))
+</em>
+<div class="extra_info">
+<em>Note: iteration count is -> pow(2, 14) = 16384</em></div>
+</div></div>
+
+<div class="api_method"><strong>Petición Dl</strong> (para obtener una URL temporal al archivo (cifrado)):
+{"m": "dl", 
+"link": <em>"MC_LINK"</em>,
+*"ssl": <em>true OR false</em>}
+
+<div class="extra_info"><strong>*Parámetros opcionales:</strong>
+<em>1) Default is false (better performance in slow machines)</em>
+</div>
+
+<strong>Respuesta Dl:</strong>
+{"url": <em>"MEGA_TEMP_URL"</em>}</div>
+
+<div class="api_error"><strong>Respuesta de error</strong>:
+{"error": <em>ERROR_CODE</em>}
+
+<div class="extra_info"><strong>Códigos de error:</strong>
+MC_EMETHOD(1)
+MC_EREQ(2)
+MC_INTERNAL_ERROR(21)
+MC_LINK_ERROR(22)
+MC_BLACKLISTED_LINK(23)
+MC_EXPIRED_LINK(24)
+MEGA_EINTERNAL(-1)
+MEGA_EARGS(-2)
+MEGA_EAGAIN(-3)
+MEGA_ERATELIMIT(-4)
+MEGA_EFAILED(-5)
+MEGA_ETOOMANY(-6)
+MEGA_ERANGE(-7)
+MEGA_EEXPIRED(-8)
+MEGA_ENOENT(-9)
+MEGA_ECIRCULAR(-10)
+MEGA_EACCESS(-11)
+MEGA_EEXIST(-12)
+MEGA_EINCOMPLETE(-13)
+MEGA_EKEY(-14)
+MEGA_ESID(-15)
+MEGA_EBLOCKED(-16)
+MEGA_EOVERQUOTA(-17)
+MEGA_ETEMPUNAVAIL(-18)
+MEGA_ETOOMANYCONNECTIONS(-19)
+MEGA_EWRITE(-20)
+MEGA_EREAD(-21)
+MEGA_EAPPKEY(-22)
+MEGA_EDLURL(-101)
+</div></div>
+</pre>
+<div style="text-align: center">( Debes aceptar los <a href="/tos">TDU</a> antes de poder utilizar nuestra API )</div>
+<div id="evil">Pórtate bien ;)</div>
+</body>
+</html>
