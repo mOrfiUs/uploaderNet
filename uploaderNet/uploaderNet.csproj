@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="binbox.cs" />
+    <Compile Include="cryptcat.cs" />
     <Compile Include="deviantsart.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -68,8 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EmbeddedResource Include="samples\dcrypt.json.txt" />
-    <Content Include="prueba.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">

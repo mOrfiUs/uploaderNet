@@ -1,4 +1,4 @@
-<head><meta http-equiv=Content-Type content="text/html; charset=unicode"></head>
+﻿<head><meta http-equiv=Content-Type content="text/html; charset=unicode"></head>
 <body>
 
 <a href="https://www.youtube.com/watch?v=_Uml1No52lE">Sample video (youtube)</a></br></br>

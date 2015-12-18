@@ -268,6 +268,16 @@ namespace uploaderNet
                 new util().modernInputBox(this, "ID's not found" + Environment.NewLine + "Demo mode", "", SystemIcons.Error, out voidMsg, true);
                 //throw new ArgumentException(@"""uploaderNet.apis"" not found. You need to create accounts and populate ID's");
             }
+            try
+            {
+                string dirLog = Path.Combine(Application.StartupPath, "LOG");
+                if (Directory.Exists(dirLog))
+                    Directory.CreateDirectory(dirLog);
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException("Can't create LOG folder!!");
+            }
         }
 
         public frmMain()
@@ -490,13 +500,13 @@ namespace uploaderNet
         {
             string fPicload = string.Empty;
             OpenFileDialog ofd = new OpenFileDialog();
-            string sExt = ".jpg";
-            ofd.Title = "Selecciona los archivos que contienen links para subir a Go4Up";
+            string sExt = ".jpg,*.png";
+            ofd.Title = "Selecciona los archivos para subir a Picload";
             ofd.InitialDirectory = Application.StartupPath;
             ofd.Filter = "Image files" + "( *" + sExt + ")| *" + sExt;
             ofd.DefaultExt = sExt;
             ofd.CheckFileExists = true;
-            ofd.FileName = "*.jpg";
+            ofd.FileName = "*.*";
             ofd.Multiselect = true;
             DialogResult ofdResult = DialogResult.Cancel;
             Invoke((Action)(() =>

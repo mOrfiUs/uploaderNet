@@ -58,7 +58,7 @@ namespace uploaderNet
                 return BitConverter.ToString(md5.ComputeHash(File.ReadAllBytes(sPath)));
         }
 
-        public string UserAgent { get { return "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"; } }
+        public string UserAgent { get { return "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"; } }
 
         public string GetVariableName<T>(Expression<Func<T>> expr)
         {

@@ -1,3 +1,0 @@
-<textarea>
-  {"success": {"message": "Success! Here are your links.", "links": []}}
-</textarea>

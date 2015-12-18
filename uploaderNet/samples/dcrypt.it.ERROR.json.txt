@@ -1,7 +1,0 @@
-{
-    "form_errors": {
-      "__all__": [
-        "Sorry, an error occurred while processing the container."
-       ]
-    }
-}

@@ -1,0 +1,83 @@
+﻿<head><meta http-equiv=Content-Type content="text/html; charset=unicode"></head>
+<body>
+<b>API for: Binbox, Shorte, Relink, nCrypt, Imgur, Picload, encrypterme.ga, youpaste.co, linkcrypter.net, Deviansart</b></br></br>
+
+<a href="https://www.youtube.com/watch?v=_Uml1No52lE">Sample video (youtube)</a></br></br>
+
+<a href="https://github.com/mOrfiUs/uploaderNet">Source Code - Github</a></br></br>
+
+
+<b>Introducción:</b></br></br>
+
+Varios Host de imágenes y servicios de monetización disponen de una API, que a menudo suele ser difícilmente accesible desde .Net.</br>
+Dichas API's tienen un funcionamiento común. Se envían datos a la web mediante una petición POST y ésta devuelve un texto (link) en formato JSON, XML, plano, etc.</br>
+La composición de los elementos a enviar incluye uno o varios identificadores (ID, hash), así como los datos a procesar, bien sea texto o un fichero.</br>
+Ésta composición puede resultar simple o verdaderamente compleja como en el caso de Binbox.</br>
+Las peticiones se realizan casi siempre de modo asíncrono mediante HttpWebRequest, aunque están implementados varios ejemplos más simples utilizando WebClient.</br></br>
+
+En este código se muestra como acceder de forma simple desde c#.<br></br>
+
+<b>API's incluidas:</b></br></br>
+
+<i>Monetization Services</i></br>
+<b>Binbox</br>
+Shorte</b></br></br>
+
+<i>Encryption Services</i></br>
+<b>Relink</br>
+nCrypt</br>
+encrypterme.ga</br>
+youpaste.co</br>
+linkcrypter.net</b></br></br>
+
+<i>Images Host</i></br>
+<b>Picload</br>
+Imgur</br>
+Devianstar</b></br></br>
+
+Para la utilización de las API's se requiere de una cuenta, así como la activación de la API dentro de las opciones de usuario de cada servicio.</br></br>
+
+Ejemplo del archivo uploaderNet.apis</br>
+idShorte=eeeeeeeee</br>
+idRelink=2222222222</br>
+idBinbox=idBinbox</br>
+idNCrypt=rrrrrrrrrrrr</br>
+idImgur=eeeeeeeee</br>
+idSecretImgur=6666666666</br>
+idPicload=idPicload</br>
+hashPicload=dddddddddddd</br>
+urlMCrypter=http://encrypterme.ga/api</br>
+urlMCrypter=http://youpaste.co/api</br>
+urlMCrypter=http://linkcrypter.net/api</br>
+(El programa selecciona el primer valor válido para cada campo)</br></br>
+
+<b>Puntos de interés:</b></br>
+La integración entre Java y .Net necesita de una DLL adicional, Jurassic.dll. Llegar a comprender el funcionamiento de esta integración puede resultar muy complejo, pero una vez adquiridos los conocimientos necesarios, se abre un abanico de posibilidades para la ejecución de todo tipo de Scripts escritos en java desde .Net.</br>
+El servicio de monetización Binbox utiliza <a href="https://bitwiseshiftleft.github.io/sjcl/demo/"><i>"Javascript Stanford Crypto Library"</i></a></br>
+Gracias a ésta integración de ambas plataformas (Java y .Net) en un par de líneas de código se pueden resolver problemas que de otra forma requerirían de la migración del código, tarea que puede demorarse meses.</br></br>
+
+Para el acceso a Picload, se ha creado una DLL compatible con COM+, una tecnología de más de 20 años que sigue siendo válida en entornos Windows. Esto hace posible que se pueda llamar desde PHP, Excel, Java, o cualquier aplicación windows.</br></br>
+
+El diseño de la interfaz está inspirado en los actuales Windows 10 y Android (conocidos como Metro o Modern)</br></br>
+
+Se ha implementado un InputBox con este mismo diseño, que es fácilmente accesible y permite una interacción simple con el usuario.</br></br>
+
+<b>Observaciones:</b></br>
+La utilización masiva de estas API's puede acabar con bloqueos temporales de las cuenta de usuario, o incluso la expulsión del servicio.</br></br>
+
+Cuando se desarrolla dentro de un grupo de trabajo es imprescindible ajustarse a las normas básicas de escritura de código, y de esa forma llevo escribiendo durante años dentro de los grupos de programadores en los que he participado.</br>
+
+Por ejemplo, la utilización de corchetes en las enumeraciones:</br>
+foreach (Control ctrl in this.Controls)</br>
+     {</br>
+	      ctrl.BackColor = this.BackColor;</br>
+	 }</br></br>
+
+Dado que el desarrollo de este ejemplo ha sido unipersonal y carece de un enfoque didáctico, se han omitido deliberadamente todo tipo de corchetes innecesarios, por lo que la lectura de este código puede resultar complicada.</br>
+Tampoco contiene, en general, comentarios. Y se han excluido casi todos los bloques try/catch, por lo que apenas hay control de errores. En un desarrollo típico el control de errores supone un 40% del código.</br></br>
+
+Si necesita un desarrollo a medida, o cualquier otra cuestión, no dude en contactar a través del correo.</br></br>
+
+apifilmaffinityimdb[[at]]g m ail.com
+
+</body></html>
