@@ -58,6 +58,7 @@
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="go4up.cs" />
     <Compile Include="imgur.cs" />
     <Compile Include="mcrypter.cs" />
     <Compile Include="ncrypt.cs" />

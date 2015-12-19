@@ -28,6 +28,7 @@ namespace uploaderNet
         private TabPage tpNCrypt;
         private TabPage tpDeviantsart;
         private TabPage tpPicload;
+        private TabPage tpGo4up;
 
         private System.Windows.Forms.Timer tmr = new System.Windows.Forms.Timer();
 
@@ -54,6 +55,7 @@ namespace uploaderNet
             this.tpMCrypter = new System.Windows.Forms.TabPage();
             this.tpNCrypt = new System.Windows.Forms.TabPage();
             this.tpDeviantsart = new System.Windows.Forms.TabPage();
+            this.tpGo4up = new System.Windows.Forms.TabPage();
             this.tpPicload = new System.Windows.Forms.TabPage();
             this.bMinimize = new System.Windows.Forms.Button();
             this.mtc.SuspendLayout();
@@ -62,7 +64,7 @@ namespace uploaderNet
             // bGo
             // 
             this.bGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bGo.Location = new System.Drawing.Point(1052, 57);
+            this.bGo.Location = new System.Drawing.Point(779, 57);
             this.bGo.Name = "bGo";
             this.bGo.Size = new System.Drawing.Size(79, 30);
             this.bGo.TabIndex = 0;
@@ -73,7 +75,7 @@ namespace uploaderNet
             // 
             this.bClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bClose.Location = new System.Drawing.Point(1056, 308);
+            this.bClose.Location = new System.Drawing.Point(783, 308);
             this.bClose.Name = "bClose";
             this.bClose.Size = new System.Drawing.Size(75, 30);
             this.bClose.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace uploaderNet
             // 
             this.pbAction.Location = new System.Drawing.Point(12, 308);
             this.pbAction.Name = "pbAction";
-            this.pbAction.Size = new System.Drawing.Size(957, 30);
+            this.pbAction.Size = new System.Drawing.Size(684, 30);
             this.pbAction.Step = 1;
             this.pbAction.TabIndex = 3;
             // 
@@ -97,13 +99,14 @@ namespace uploaderNet
             this.mtc.Controls.Add(this.tpMCrypter);
             this.mtc.Controls.Add(this.tpNCrypt);
             this.mtc.Controls.Add(this.tpDeviantsart);
+            this.mtc.Controls.Add(this.tpGo4up);
             this.mtc.Controls.Add(this.tpPicload);
             this.mtc.ItemSize = new System.Drawing.Size(0, 21);
             this.mtc.Location = new System.Drawing.Point(12, 32);
             this.mtc.Multiline = true;
             this.mtc.Name = "mtc";
             this.mtc.SelectedIndex = 0;
-            this.mtc.Size = new System.Drawing.Size(957, 252);
+            this.mtc.Size = new System.Drawing.Size(684, 252);
             this.mtc.TabIndex = 4;
             // 
             // tpImgur
@@ -111,7 +114,7 @@ namespace uploaderNet
             this.tpImgur.Location = new System.Drawing.Point(4, 25);
             this.tpImgur.Name = "tpImgur";
             this.tpImgur.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImgur.Size = new System.Drawing.Size(949, 223);
+            this.tpImgur.Size = new System.Drawing.Size(676, 223);
             this.tpImgur.TabIndex = 4;
             this.tpImgur.Text = "Imgur";
             this.tpImgur.UseVisualStyleBackColor = true;
@@ -121,7 +124,7 @@ namespace uploaderNet
             this.tpDlc.Location = new System.Drawing.Point(4, 25);
             this.tpDlc.Name = "tpDlc";
             this.tpDlc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDlc.Size = new System.Drawing.Size(1150, 223);
+            this.tpDlc.Size = new System.Drawing.Size(949, 223);
             this.tpDlc.TabIndex = 5;
             this.tpDlc.Text = "Contenedor dlc";
             this.tpDlc.UseVisualStyleBackColor = true;
@@ -131,7 +134,7 @@ namespace uploaderNet
             this.tpCNL2.Location = new System.Drawing.Point(4, 25);
             this.tpCNL2.Name = "tpCNL2";
             this.tpCNL2.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCNL2.Size = new System.Drawing.Size(1150, 223);
+            this.tpCNL2.Size = new System.Drawing.Size(949, 223);
             this.tpCNL2.TabIndex = 6;
             this.tpCNL2.Text = "Servidor cnl2";
             this.tpCNL2.UseVisualStyleBackColor = true;
@@ -141,7 +144,7 @@ namespace uploaderNet
             this.tpBinbox.Location = new System.Drawing.Point(4, 25);
             this.tpBinbox.Name = "tpBinbox";
             this.tpBinbox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBinbox.Size = new System.Drawing.Size(1150, 223);
+            this.tpBinbox.Size = new System.Drawing.Size(949, 223);
             this.tpBinbox.TabIndex = 7;
             this.tpBinbox.Text = "Binbox";
             this.tpBinbox.UseVisualStyleBackColor = true;
@@ -151,7 +154,7 @@ namespace uploaderNet
             this.tpMCrypter.Location = new System.Drawing.Point(4, 25);
             this.tpMCrypter.Name = "tpMCrypter";
             this.tpMCrypter.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMCrypter.Size = new System.Drawing.Size(1150, 223);
+            this.tpMCrypter.Size = new System.Drawing.Size(949, 223);
             this.tpMCrypter.TabIndex = 8;
             this.tpMCrypter.Text = "MCrypter";
             this.tpMCrypter.UseVisualStyleBackColor = true;
@@ -161,7 +164,7 @@ namespace uploaderNet
             this.tpNCrypt.Location = new System.Drawing.Point(4, 25);
             this.tpNCrypt.Name = "tpNCrypt";
             this.tpNCrypt.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNCrypt.Size = new System.Drawing.Size(1150, 223);
+            this.tpNCrypt.Size = new System.Drawing.Size(949, 223);
             this.tpNCrypt.TabIndex = 9;
             this.tpNCrypt.Text = "nCrypt";
             this.tpNCrypt.UseVisualStyleBackColor = true;
@@ -171,17 +174,27 @@ namespace uploaderNet
             this.tpDeviantsart.Location = new System.Drawing.Point(4, 25);
             this.tpDeviantsart.Name = "tpDeviantsart";
             this.tpDeviantsart.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDeviantsart.Size = new System.Drawing.Size(1150, 223);
+            this.tpDeviantsart.Size = new System.Drawing.Size(949, 223);
             this.tpDeviantsart.TabIndex = 11;
             this.tpDeviantsart.Text = "Deviantsart";
             this.tpDeviantsart.UseVisualStyleBackColor = true;
+            // 
+            // tpGo4up
+            // 
+            this.tpGo4up.Location = new System.Drawing.Point(4, 25);
+            this.tpGo4up.Name = "tpGo4up";
+            this.tpGo4up.Padding = new System.Windows.Forms.Padding(3);
+            this.tpGo4up.Size = new System.Drawing.Size(949, 223);
+            this.tpGo4up.TabIndex = 0;
+            this.tpGo4up.Text = "Go4up";
+            this.tpGo4up.UseVisualStyleBackColor = true;
             // 
             // tpPicload
             // 
             this.tpPicload.Location = new System.Drawing.Point(4, 25);
             this.tpPicload.Name = "tpPicload";
             this.tpPicload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPicload.Size = new System.Drawing.Size(1150, 223);
+            this.tpPicload.Size = new System.Drawing.Size(949, 223);
             this.tpPicload.TabIndex = 12;
             this.tpPicload.Text = "Picload";
             this.tpPicload.UseVisualStyleBackColor = true;
@@ -189,7 +202,7 @@ namespace uploaderNet
             // bMinimize
             // 
             this.bMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bMinimize.Location = new System.Drawing.Point(975, 308);
+            this.bMinimize.Location = new System.Drawing.Point(702, 308);
             this.bMinimize.Name = "bMinimize";
             this.bMinimize.Size = new System.Drawing.Size(75, 30);
             this.bMinimize.TabIndex = 2;
@@ -201,7 +214,7 @@ namespace uploaderNet
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1141, 350);
+            this.ClientSize = new System.Drawing.Size(868, 350);
             this.ControlBox = false;
             this.Controls.Add(this.pbAction);
             this.Controls.Add(this.bMinimize);
@@ -310,17 +323,11 @@ namespace uploaderNet
             this.bClose.Click += (sender, e) => { this.Close(); };
             this.KeyPreview = true;
             this.KeyPress += frmMain_KeyPress;
-            this.FormClosed += frmMain_FormClosed;
         }
 
         void bMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        void frmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
 
         void frmMain_KeyPress(object sender, KeyPressEventArgs e)
@@ -344,7 +351,7 @@ namespace uploaderNet
                         if (arrDict.Length < 4)
                             if (DialogResult.Cancel == new util().modernInputBox(this, "El formato del archivo\r\n" + fuLog + "\r\nno parece correcto. ¿Continuar?", voidMsg, SystemIcons.Question, out voidMsg))
                                 return dictTitlesLinks;
-                        //2015-03-25 09:49:40|go4up.com|http://go4up.com/dl/ea8bcb275355||oR08eH2.part1.rar
+
                         string titleLinks = arrDict[3].Split(".".ToCharArray(), StringSplitOptions.None)[0];
                         if (string.IsNullOrEmpty(titleLinks))
                             titleLinks = arrDict[4].Split(".".ToCharArray(), StringSplitOptions.None)[0];
@@ -625,6 +632,62 @@ namespace uploaderNet
             return fNCrypt;
         }
 
+        private string doGo4up()
+        {
+            string sGo4up = string.Empty;
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Title = "Selecciona los archivos que contienen links de Go4up";
+            ofd.InitialDirectory = Path.GetDirectoryName(@"C:\Program Files\FileUploader\");
+            ofd.Filter = "Text files (*.log; *.txt)|*.log;*.txt|All files (*.*)|*.*";
+            ofd.DefaultExt = "*.*";
+            ofd.FilterIndex = 1;
+            ofd.CheckFileExists = true;
+            ofd.FileName = "FileUploader.log";
+            ofd.Multiselect = true;
+            DialogResult ofdResult = DialogResult.Cancel;
+            Invoke((Action)(() =>
+            {
+                ofdResult = ofd.ShowDialog((IWin32Window)this);
+            }));
+            if (ofdResult == DialogResult.Cancel)
+                return sGo4up;
+            string linksHosts = string.Empty;
+            Dictionary<string, string> dictTitlesLinks = extractDictFromFiles(ofd.FileNames);
+            ManualResetEvent syncAll = new ManualResetEvent(false);
+            int iFileSync = 0;
+            foreach (KeyValuePair<string, string> kvPair in dictTitlesLinks)
+            {
+                int iLinkSync = 0;
+                string[] arrLinks = kvPair.Value.Split(",".ToCharArray(), StringSplitOptions.None);
+                ManualResetEvent syncTitle = new ManualResetEvent(false);
+                foreach (string idGo4up in arrLinks)
+                {
+                    go4up cGo4up = new go4up("http://go4up.com/download/gethosts/" + idGo4up + "/n");
+                    {
+                        cGo4up.FinishWebReq += (oSender, oEvents) =>
+                        {
+                            foreach (string l in ((string[])oEvents.LinksHosts))
+                                linksHosts += l + Environment.NewLine;
+                            if (arrLinks.Length == ++iLinkSync)
+                            {
+                                sGo4up = Path.Combine(Path.GetDirectoryName(ofd.FileName), kvPair.Key + ".txt");
+                                //getShorteRelink(linksHosts, kvPair.Key, ep, sGo4up);
+                                linksHosts = string.Empty;
+                                syncTitle.Set();
+                                if (dictTitlesLinks.Count == ++iFileSync)
+                                    syncAll.Set();
+                            }
+                        };
+                        cGo4up.getLinksHosts();
+                    }
+                }
+                syncTitle.WaitOne();
+            }
+            syncAll.WaitOne();
+            return sGo4up;
+        }
+
         private void initTmr()
         {
             tmr.Interval = 450;
@@ -670,21 +733,19 @@ namespace uploaderNet
             Button b = (Button)sender;
             string selTab = this.mtc.SelectedTab.Name;
             Dictionary<string, Action> doActions = new Dictionary<string, Action>()
-              {
-                  { "tpMCrypter", () => tTmp = doMCrypter() },
-                  { "tpNCrypt", () => tTmp = doNCrypt() },
-                  { "tpBinbox", () => tTmp = doBinbox() },
-                  { "tpImgur", () => tTmp = doImgur() },
-                  { "tpDeviantsart", () => tTmp = doDeviantsart() },
-                  { "tpPicload", () => tTmp = doPicload() }
-              };
+            {
+                { "tpGo4up", () => tTmp = doGo4up() },
+                { "tpMCrypter", () => tTmp = doMCrypter() },
+                { "tpNCrypt", () => tTmp = doNCrypt() },
+                { "tpBinbox", () => tTmp = doBinbox() },
+                { "tpImgur", () => tTmp = doImgur() },
+                { "tpDeviantsart", () => tTmp = doDeviantsart() },
+                { "tpPicload", () => tTmp = doPicload() }
+            };
             ThreadPool.QueueUserWorkItem(_ =>
             {
                 doActions[selTab]();
                 actionDone(tTmp);
-                if (selTab == "tpCNL2")
-                    if (DialogResult.OK == new util().modernInputBox(this, "Se reiniciará la aplicación. ¿Continuar?", tTmp, SystemIcons.Question, out tTmp, true))
-                        Application.Restart();
             });
         }
 
